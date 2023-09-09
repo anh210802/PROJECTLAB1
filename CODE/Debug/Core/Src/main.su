@@ -1,0 +1,7 @@
+main.c:67:5:main	16	static
+main.c:140:6:dis1	16	static
+main.c:144:6:dis2	16	static
+main.c:148:6:display7SEG	16	static
+main.c:245:6:SystemClock_Config	72	static
+main.c:281:13:MX_GPIO_Init	32	static
+main.c:325:6:Error_Handler	4	static,ignoring_inline_asm
