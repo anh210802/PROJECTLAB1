@@ -101,6 +101,7 @@ int main(void)
 	  switch(i){
 	  	  case 0:
 	  		  	  clearAllClock();
+	  		  	  break;
 	 	  case 1:
 	 			  HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_4);
 	 			  break;
