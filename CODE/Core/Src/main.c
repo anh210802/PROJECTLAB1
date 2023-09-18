@@ -91,24 +91,20 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int c = 2;
+  int i = 0;
   while (1)
   {
-	  if (c > 0){
+	  if (i <= 1) {
 	  		  HAL_GPIO_WritePin(LED_RED_GPIO_Port,LED_RED_Pin, GPIO_PIN_RESET);
 	  		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port,LED_YELLOW_Pin, GPIO_PIN_SET);
 	  	  }
-	  	  else {
+	 else {
 	  		  HAL_GPIO_WritePin(LED_RED_GPIO_Port,LED_RED_Pin, GPIO_PIN_SET);
 	  		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port,LED_YELLOW_Pin, GPIO_PIN_RESET);
-	  		  if (c < -1) {
-	  			  c = 2;
-	  			  HAL_GPIO_WritePin(LED_RED_GPIO_Port,LED_RED_Pin, GPIO_PIN_RESET);
-	  			  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port,LED_YELLOW_Pin, GPIO_PIN_SET);
-	  		  }
 	  	  }
-	  	  c--;
-	  	  HAL_Delay(1000);
+	 i = i + 1;
+	 if(i > 3) i = 0;
+	 HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -170,7 +166,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pin = LED_RED_Pin|LED_YELLOW_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 }
