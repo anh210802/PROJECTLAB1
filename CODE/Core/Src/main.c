@@ -94,36 +94,30 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int iS = 0; // giay
-  int iM = 0; // phut
-  int s = 0;
-  int m = 0;
+  int s = 0; // giay
+  int m = 0; // phut
   int h = 0; // gio
   while (1)
   {
 	  clearAllClock();
 
-	  s = iS / 5;
-	  setNumberOnClock(s);
-
-	  m = iM / 5;
-	  setNumberOnClock(m);
-
+	  setNumberOnClock(s/5);
+	  setNumberOnClock(m/5);
 	  setNumberOnClock(h);
 
-	  iS++;
-	  if (iS >= 60)
+	  s++;
+	  if (s >= 60)
 	  {
-		  iM++;
-		  iS = 0;
+		  m++;
+		  s = 0;
 	  }
-	  if (iM >= 60)
+	  if (m >= 60)
 	  {
 		  h++;
-		  iM = 0;
+		  m = 0;
 	  }
 	  if (h >= 12) h = 0;
-	  HAL_Delay(50);
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
